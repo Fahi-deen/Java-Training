@@ -1,8 +1,7 @@
 # Java-Training
 ## This repository consists of assignments and tasks which were done during the Developer course taken by Sagar from JavaByKiran Academy.
-#### First Term
-: This is the definition of the first term.
+#### Day 1
+ Day 1 Documention pdf Link [Click here](https://link-url-here.org).
 
-#### Second Term
-: This is one definition of the second term.
-: This is another definition of the second term.
+#### Day 2
+  Day 2 Documention pdf Link
