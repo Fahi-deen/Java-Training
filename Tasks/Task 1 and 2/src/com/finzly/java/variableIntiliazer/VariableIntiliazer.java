@@ -16,6 +16,7 @@ public class VariableIntiliazer {
 	}
 	public void setB(int b) {
 		this.b = b;
+		//hello
 	}
 	
 
