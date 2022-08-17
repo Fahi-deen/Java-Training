@@ -1,0 +1,28 @@
+Dependency Injection:
+ ->using XML:
+     -Create ApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
+     -Use Doctor staff=context.getBean(Doctor.class);
+     -create XML file like spring.xml,in that create bean class(bean id optional)
+      
+ ->Using Annotations
+     -create ApplicationContext context=new AnnotationConfigApplicationContext(BeanConfig.class);
+     -Use Doctor staff=context.getBean(Doctor.class);
+     -create this in spring.xml file <context:component-scan base-package="com.fahideen.Springboot"></context:component-scan>
+  ->Java Config method:
+     -Create BeanConfig.java(any name)
+     -add @Configuration Annotation and @bean Annotation 
+     -@Bean
+        public Doctor doctor()
+        { return new Doctor(); }
+  
+Scope:
+   -> Default Scope is singleton,we can change it into @Scope(scopeName = "prototype")
+   ->BeanNameAware and override it
+   ->using annotation for that add maven dependency in pom.xml javaAnnotation api and add @postConstruct.
+
+AOP(Aspect-oriented programming ):
+   ->Aspect-Oriented Programming entails breaking down program logic into distinct parts called so-called concerns.
+        The functions that span multiple points of an application are called cross-cutting concerns and
+         these cross-cutting concerns are conceptually separate from the application's business logic. 
+          There are various common good examples of aspects like logging, auditing, declarative transactions, security, caching, etc.
+   ->
