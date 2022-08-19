@@ -59,7 +59,6 @@ public class Ten_Operations {
 		operations.areaOfCircle(10);
 		operations.percentage(25,50);
 		operations.triangle(10, 5);
-
 	}
 
 }
