@@ -1,9 +1,10 @@
 package com.fahideen.Comparable;
 
 public class Student implements Comparable<Student> {
-	String name;
-	int rollNo;
-	int rank;
+	private String name;
+	private int rollNo;
+	private int rank;
+	public Student() {}
 
 	public Student(String name, int rollNo, int rank) {
 		super();

@@ -1,9 +1,9 @@
 package com.fahideen.Comparator;
 
 public class Student {
-	String name;
-	int rollNo;
-	int rank;
+	 String name;
+	 int rollNo;
+	 int rank;
 
 	public Student(String name, int rollNo, int rank) {
 		super();
