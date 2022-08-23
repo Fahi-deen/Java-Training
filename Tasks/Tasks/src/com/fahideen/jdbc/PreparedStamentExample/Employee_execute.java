@@ -13,7 +13,7 @@ import com.fahideen.jdbc.StatementExample.Employee;
 public class Employee_execute {
 	ArrayList<Employee> ae = new ArrayList<Employee>();
 
-	public ArrayList<Employee> create_Employee() throws SQLException {
+	public void create_Employee() throws SQLException {
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/Employee_db", "root", "3244");
 			String sql = "CREATE TABLE employee_details" + "(id int not null," + "name varchar(45) not null,"
@@ -26,10 +26,9 @@ public class Employee_execute {
             display_Employee();
 		}
 
-		return ae;
 	}
 
-	public ArrayList<Employee> display_Employee() throws SQLException {
+	public void display_Employee() throws SQLException {
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/Employee_db", "root", "3244");
 		PreparedStatement stmt=con.prepareStatement("select * from employee_details");  
 		// feteching the details of the employee
@@ -42,15 +41,15 @@ public class Employee_execute {
 			ee.setSalary(rs.getInt("salary"));
 			ae.add(ee);
 		}
+		System.out.println("---------------------------");
 		System.out.println("Table :");
 		for (int i = 0; i < ae.size(); i++) {
 			System.out.println(ae.get(i).getId() + " " + ae.get(i).getName() + " " + ae.get(i).getSalary());
 		}
 		System.out.println("---------------------------");
-		return ae;
 
 	}
-	public ArrayList<Employee> insert_Employee() throws SQLException {
+	public void insert_Employee() throws SQLException {
 //		Insert the detail of the employee
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/Employee_db", "root", "3244");
 		String sql_InsertQuery = "Insert into employee_details values(?,?,?)";
@@ -62,7 +61,7 @@ public class Employee_execute {
 		System.out.println("Record Inserted Sucessfully : " + insert_result);
 		System.out.println("After inserting :");
 		display_Employee();
-		return ae;
+
 	}
 
 
@@ -80,7 +79,7 @@ public class Employee_execute {
 		return ae;
 	}
 
-	public ArrayList<Employee> delete_Employee() throws SQLException {
+	public void delete_Employee() throws SQLException {
 //	Delete the detail of the Employee
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/Employee_db", "root", "3244");
 		String sql_deleteQuery = "delete from employee_details where id=6";
@@ -90,16 +89,16 @@ public class Employee_execute {
 		System.out.println("After deleting :");
 		display_Employee();
 
-		return ae;
+
 	}
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		Employee_execute emp = new Employee_execute();
-//		emp.create_Employee();
+		emp.create_Employee();
 //		emp.insert_Employee();
 //		emp.update_Employee();
-		emp.delete_Employee();
+//		emp.delete_Employee();
 
 	}
 
